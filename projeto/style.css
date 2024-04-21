@@ -1,0 +1,206 @@
+* {
+  /* Reset de CSS */
+  /* "*" significa para todos os elementos  */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* é possível colocar valor na borda das caixas   */
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5); 
+  --surface-color: rgba(255, 255, 255, 0.05); 
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-starts.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1); 
+  --switch-bg-url: url(./assets/sun.svg);
+  
+}
+body {
+  /*
+  background-image: url(./assets/assets/bg-mobile.jpg);  url é uma função que recebe como parâmetro o local aonde se encontra a imagem - no caso dentro da pasta assets 
+  background-repeat: no-repeat;  "no-repeat para não repetir a imagem que foi selecionada "
+  background-position: top center;  centralizando imagem no body - parte visível da página   a palavra top altera o ponto de interesse para o centro da página (ou seja, da parte vísivel da página - do body)/ 
+  background-size: cover;  cover - cobrir - cobre todo o espaço do body/parte vísivel/conteúdo da página com o fundo da imagem bg-mobile.png */
+
+  /* ---> utilizando atalho para o código acima */
+  background: var(--bg-url) no-repeat top center/cover; /* sendo no-repeat = sem repetição | top center = posição | size = cover */
+}
+
+body * {
+  /* * significa seletor universal - significa que irá aplicar o comando dentro desse body para todos os elementos dentro do body (comando de fonte sendo inter) */
+  font-family: sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  /* identificador de id | container é o seletor de id */
+  width: 360px; /* largura  */
+  /* height: 712px; -> padrão dos navegadores */
+  /* border: 1px solid red;  borda vermelha na caixa -> apenas para conseguirmos localizar a caixa  */
+  /* margin: auto;  centralizando automático a caixa no centro da página - regra do css: não faz o preenchimento automático em cima e em baixo da caixa - o preenchimento funciona apenas com a largura da caixa - não com a altura  */
+
+  /* margin-top: 56px; 
+    margin-right: auto; 
+    margin-bottom: auto
+    margin-left: auto; */
+  margin: 56px auto 0px;
+  padding: 0 24px;
+  margin: 56px auto 0px; /* substitui as ultimas 4 linhas acima */
+}
+/* o px é uma unidade de medida fixa do CSS */
+
+/* profile */ 
+#profile {
+  text-align: center; /* substituto de colocar "display: block;" e "margin: auto" no conteudo img abaixo - para elementos INLINE é possível colocar text-align para alinhar o elemento   */
+  padding: 24px; /* adiciona preenchimento para todos os lados da caixa de 24px */
+}
+
+#profile img {
+  width: 112px; /*é possível ter acesso a largura da imagem no figma - a altura (height) não precisa definir - altura segue o conteúdo da página  || a caixa container não precisa borda e altura, porque conforme vai acrescentando caixas dentro da caixa container, o container vai expandindo automaticamente, ou seja, a altura é fluída */
+  /* display: block;  IMG é um elemento inline no css - portanto para aplicar "margin:auto; é necessário transformar para block " */
+  /* margin: auto;  após transformar o inline em block na linha acima - margin:auto; aplicado com sucesso para centralizar a imagem no centro da borda */
+}
+
+#profile p {
+  font-weight: 500; /* é o negrito */
+  /* font-size: 16px;  - por padrão os navegadores tem font-size: 16px */
+  line-height: 24px; /* altura da linha */
+  margin-top: 8px;
+}
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+/* switch */
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1; /* exemplo do predio - camada 1 - utilizando propriedades como left e top vc pode navegar com o botão em qualquer lugar da página*/ 
+  transform: translateY(-50%);
+} 
+
+.light #switch button {
+  right: 0; 
+  left: initial;
+}
+
+#switch span {
+  display: block; /* devido span não aceitar propriedade width */
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+/* REGRA CSS - REGRA DE DISPLAY 
+
+DISPLAY: é a visualização 
+
+alguns elementos tem por padrão o display-none
+display: none;   (none - nenhum significa que vai sumir com o elemento da tela)
+alguns elementos tem por padrão o display-block 
+display: block; 
+e outros elementos tem por padrão o display-inline 
+
+qual a diferença entre DISPLAY NONE - BLOCK E INLINE?
+display BLOCK dará toda a largura possível de tela para o elemento
+display 
+
+DIV é um elemento BLOCK no html 
+IMG é um elemento inline no css 
+
+Para todos os elementos INLINE não é possível aplicar o margin:auto; no css 
+
+para aplicar o margin:auto; tem que transformar o elemento em BLOCK
+adicionado: display: inline-block
+
+truques do CSS em csstricks
+*/
+
+/* links */
+ul {
+  list-style: none; /* nenhum estilo na lista -
+  tirar os pontos que vem por padrão */
+  /*  flex-direction: column; no figma o flex-direction = row - porém não precisa colocar porque o flex direction já é row por padrão no navegador - entretando é possível adicionar flex-direction: column; para ficar um abaixo do outro */
+  /* gap: 8px;  coloca espaço entre os elementos */
+  /* "NO COMEÇO DE CARREIRA O JEITO CERTO É O JEITO QUE RESOLVE - não importa qual elemento voce está utilizando - isso é aperfeiçoado com o tempo " */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0; 
+}
+
+ul li a {
+  /*    border: 1px solid red;  a lista li esta dentro da ul que esta dentro da div container que já tem a largura (width) de 360px - borda vermelha para ver os comandos acontecendo - o elemento "a" de links é um DISPLAY INLINE */
+  align-items: center; /* alinhe os itens bem no centro (main) da caixa - modo vertical |  */
+  display: flex; /* o flex trabalha com os elementos dentro da caixa e faz com que esses elementos fiquem um ao lado do outro */
+  justify-content: center; /* alinhe os itens bem no centro (main) da caixa - modo horizontal e vertical - é possível devido o flex criar uma linha imaginária no centro da caixa para alinhar itens   */
+  padding: 16px 24px;
+  background: var(--surface-color); /* rgba = red - green - blue e alpha | da forma que esta configurado é um branco com 0.1 de transparencia  */
+  border: 1px solid var(--stroke-color); /* branco com 0.5 de transparencia  */
+  border-radius: 8px; /* arredondamento de borda de 8px */
+  backdrop-filter: blur(4px); /* efeito embaçado quase imperceptivel devido ser apenas 4px */
+  -webkit-backdrop-filter: blur (4px); 
+  text-decoration: none; /* tirando sublinhado abaixo do texto */
+  font-weight: 500; /* fonte com peso 500  */ 
+  transition: background 0.2s;                                                                   
+}
+/* pseudo-selector */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links{
+  display: flex; /* os ícones já estavam um ao lado do outro - porém foi colocado o display flex para habilitar o gap (espaço entre itens)*/  
+  justify-content: center; /* alinhando os itens ao meio */ 
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+
+}
+
+
+
+
+
+

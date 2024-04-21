@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- definindo documento html5 -->
+<html lang="pt-br" class="">
+  <!-- html elemento raiz atríbuto lang que é linguagem -->
+  <head>
+    <!-- configuração para fonte do google tipo inter tamanho 400;500 (wght) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ajustar configurações do documento que não é vísivel para quem esta visualizando a página -->
+    <meta charset="UTF-8" />
+    <!-- define quais tipos de caracteres vamos usar na página - utf-8 permite que utilize caracteres especiais -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- permite que tenha o conteúdo da página como largura do dispositivo - permite que a página se adapte em tela de notebook, celular, tablet...-->
+    <title>Devlinks</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- tag link para transformar texto em link e href para indicar qual local está o css | na própria pasta utiliza-se ./style.css ou style.css -->
+  </head>
+  <body>
+    <!-- parte visivel -->
+
+    <div id="container">
+      <!-- caixa genérica que não tem estilo, caixa com id sendo container só pode ter 1  -->
+      <div id="profile">
+        <img src="./assets/avatar.png" alt="Dark Mode" />
+        <!-- a tag image precisa de dois atributos: o atributo src determina o local da imagem - o atributo alt (alternativo) significa "se no local indicado no src eu não encontrar a imagem, o que vou escrever?" -->
+
+        <p>@joaofeliciano._</p>
+      </div>
+      
+      <div id="switch" onclick="toggleMode()"> <!-- quando clicar (atributo onclick) no switch executar a função javascript toggleMode (modo de alternância) -->
+        <button></button>
+        <span></span>
+      </div>
+
+      <ul>
+        <!-- lista não ordenada -->
+        <li><a href="https://www.linkedin.com/in/joao-feliciano">Profissional > LinkedIn</a></li>
+        <!-- um item da lista | tag a adiciona link -->
+        <li><a href="https://www.instagram.com/joaofeliciano._">Social > Instagram</a></li>
+        <li>
+          <a href="https://github.com/joao-feliciano"
+            >Portfólio > GitHub</a
+          >
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@joaofeliciano._" target="_blank"
+            >Canal > Youtube</a
+          >
+        </li>
+      </ul>
+      <div id="social-links">
+        <a href="https://github.com/joao-feliciano" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+      <a href="https://www.instagram.com/joaofeliciano._" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+      <a href="https://www.youtube.com/@joaofeliciano._" target="_blank">
+        <ion-icon name="logo-youtube"></ion-icon>
+      </a>
+      <a href="https://www.linkedin.com/in/joao-feliciano" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+      </div>
+      <footer> Projeto Devlinks - <a href="https://rocketseat.com.br/">Rocketseat</a><p>João Feliciano - Abril de 2024</p></footer>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
+
+<!-- prettier em settings - ao salvar o código identa sozinho -->
+
+
