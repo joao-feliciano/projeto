@@ -45,7 +45,7 @@ body * {
 
 #container {
   /* identificador de id | container é o seletor de id */
-  width: 360px; /* largura  */
+  width: 100%; /* largura  */
   /* height: 712px; -> padrão dos navegadores */
   /* border: 1px solid red;  borda vermelha na caixa -> apenas para conseguirmos localizar a caixa  */
   /* margin: auto;  centralizando automático a caixa no centro da página - regra do css: não faz o preenchimento automático em cima e em baixo da caixa - o preenchimento funciona apenas com a largura da caixa - não com a altura  */
