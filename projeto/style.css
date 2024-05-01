@@ -35,6 +35,7 @@ body {
 
   /* ---> utilizando atalho para o código acima */
   background: var(--bg-url) no-repeat top center/cover; /* sendo no-repeat = sem repetição | top center = posição | size = cover */
+  height: 100vh;
 }
 
 body * {
@@ -46,6 +47,7 @@ body * {
 #container {
   /* identificador de id | container é o seletor de id */
   width: 100%; /* largura  */
+  max-width: 588px;
   /* height: 712px; -> padrão dos navegadores */
   /* border: 1px solid red;  borda vermelha na caixa -> apenas para conseguirmos localizar a caixa  */
   /* margin: auto;  centralizando automático a caixa no centro da página - regra do css: não faz o preenchimento automático em cima e em baixo da caixa - o preenchimento funciona apenas com a largura da caixa - não com a altura  */
@@ -199,6 +201,17 @@ footer {
 
 }
 
+/* media queries */ 
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
 
 
 
