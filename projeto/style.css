@@ -35,7 +35,7 @@ body {
 
   /* ---> utilizando atalho para o código acima */
   background: var(--bg-url) no-repeat top center/cover; /* sendo no-repeat = sem repetição | top center = posição | size = cover */
-  height: 100vh;
+  height: 100vh; /* 100 viewport height significa que o background do body não terá mais a altura do conteúdo, mas se adaptará ao tamanho da tela */ 
 }
 
 body * {
@@ -198,6 +198,7 @@ ul li a:hover {
 footer {
   padding: 24px 0;
   text-align: center;
+  font-size: 14px;
 
 }
 
